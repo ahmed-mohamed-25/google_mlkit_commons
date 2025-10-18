@@ -41,8 +41,6 @@ Pod::Spec.new do |s|
     'SWIFT_COMPILATION_MODE' => 'wholemodule',
     'DEAD_CODE_STRIPPING' => 'NO',
     'IPHONEOS_DEPLOYMENT_TARGET' => '17.0',
-    # Exclude arm64 on simulator where required for some CocoaPods/native plugin combinations
-    'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'
   }
 
   s.user_target_xcconfig = {
