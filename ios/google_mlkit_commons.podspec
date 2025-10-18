@@ -28,25 +28,5 @@ Pod::Spec.new do |s|
   s.swift_version = '5.9'
   s.static_framework = true
 
-  # ✅ These three lines are critical for module visibility
-  s.requires_arc = true
-  s.module_name = 'google_mlkit_commons'
-  s.header_dir  = 'google_mlkit_commons'
-
-  # ✅ CocoaPods build settings (for Xcode 16)
-  s.pod_target_xcconfig = {
-    'DEFINES_MODULE' => 'YES',
-  'BUILD_LIBRARY_FOR_DISTRIBUTION' => 'NO',
-    'CLANG_ENABLE_MODULES' => 'YES',
-    'SWIFT_COMPILATION_MODE' => 'wholemodule',
-    'DEAD_CODE_STRIPPING' => 'NO',
-    'IPHONEOS_DEPLOYMENT_TARGET' => '17.0',
-  }
-
-  s.user_target_xcconfig = {
-    'DEFINES_MODULE' => 'YES',
-  'BUILD_LIBRARY_FOR_DISTRIBUTION' => 'NO',
-    'CLANG_ENABLE_MODULES' => 'YES',
-    'IPHONEOS_DEPLOYMENT_TARGET' => '17.0'
-  }
+  s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' }
 end
