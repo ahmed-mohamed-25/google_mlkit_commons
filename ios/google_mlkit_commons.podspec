@@ -25,7 +25,7 @@ Pod::Spec.new do |s|
   # Raised deployment target and Swift version to align with modern Xcode toolchains (Xcode 26+)
   s.platform = :ios, '17.0'
   s.ios.deployment_target = '17.0'
-  s.swift_version = '5.9'
+  s.swift_version = '6.2'
   s.static_framework = true
 
   s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' }
