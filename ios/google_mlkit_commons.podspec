@@ -25,7 +25,7 @@ Pod::Spec.new do |s|
   # Raised deployment target and Swift version to align with modern Xcode toolchains (Xcode 26+)
    s.platform = :ios, '16.0'
   s.swift_version = '5.9'
-  s.static_framework = false
+  s.static_framework = true
 
   s.pod_target_xcconfig = {
     'DEFINES_MODULE' => 'YES',
